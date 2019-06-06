@@ -1,0 +1,34 @@
+.postcontainer {
+    display:flex;
+    flex-flow: column wrap;
+    width: 100%;
+    border: 3px solid red;
+    align-items: center;
+}
+
+.postcontainer .postcontainer-header{
+    display:flex;
+    flex-flow: row wrap;
+    width: 100%;
+    border: 3px solid gold;
+}
+
+.postcontainer .postcontainer-header .thumbnailImg{
+    width: 7%;
+}
+
+.postcontainer .postcontainer-header .thumbnailImg img{
+    width:100%;
+    border-radius: 40px;
+}
+
+
+
+.main-img{
+    width:100%;
+    border: 1px solid red;
+}
+
+.main-img img{
+    width:100%;
+} 
