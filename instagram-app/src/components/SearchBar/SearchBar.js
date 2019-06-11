@@ -7,10 +7,15 @@ const SearchBar = props =>{
             <div className="searchbar-logo-block">
                 SearchBar
             </div>
-            <input 
+            <form onSubmit={props.searchPosts}>
+                <input 
+                onChange={props.searchEventHandler}
+                name="searchValue"
                 type="text"
                 placeholder="Search"
-            />
+                />
+            </form>
+
             <nav>
                 <p>Stuff</p>
             </nav>
