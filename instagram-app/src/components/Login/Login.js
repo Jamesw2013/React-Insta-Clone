@@ -10,8 +10,12 @@ class Login extends React.Component{
     }
     login = event => {
         event.preventDefault();
+        const username = this.state.username;
+        localStorage.setItem('user', username);
 
-
+        const password = this.state.password;
+        localStorage.setItem('password', password);
+        window.location.reload();
     }
     loginEventHandler = event =>{
         this.setState({[event.target.name]:event.target.value});
@@ -22,16 +26,16 @@ class Login extends React.Component{
                 <input 
                     type="text" 
                     placeholder="Username"
-                    onChange={loginEventHandler}
-                    value={this.state.username}
+                    onChange={this.loginEventHandler}
+                    name="username"
                 />
                 <input 
                     type="text"
                     placeholder="Password"
-                    onChange={loginEventHandler}
-                    value={this.state.password}
+                    onChange={this.loginEventHandler}
+                    name="password"
                 />
-                <button onClick={login}>Login</button>
+                <button onClick={this.login}>Login</button>
             </form>
         </div>)
     }
