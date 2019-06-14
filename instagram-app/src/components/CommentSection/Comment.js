@@ -3,10 +3,17 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 
+const CommentP = styled.p`
+    width: 100%;
+    font-size: 1.6rem;
+`;
+
+
+
 const Comment = props => {
     return (
 
-        <p><strong>{props.commentObj.username}</strong>: {props.commentObj.text}</p>
+            <CommentP><strong>{props.commentObj.username}</strong>: {props.commentObj.text}</CommentP>
 
     )
 }

@@ -27,7 +27,7 @@ const PostContainerMainDiv = styled.div`
     display:flex;
     flex-flow: column wrap;
     width: 100%;
-    border: 1px solid black;
+    border: 1px solid lightgray;
     align-items: center;
     margin-top: 2%;
     margin-bottom: 2%;
@@ -42,7 +42,7 @@ const PostContainerHeader = styled.div`
 `;
 
 const PostContainer = props => {
-    return (
+        return(
         <PostContainerMainDiv>
             <PostContainerHeader>
                 <UserThumbnailDiv>
@@ -54,13 +54,14 @@ const PostContainer = props => {
 
             <PostImgDiv>
                  <PostImgMain src={props.postData.imageUrl} alt={props.postData.imageUrl}/>
+
             </PostImgDiv>
-
-
             <LikesBar likesCount={props.postData.likes}/>
             <CommentSection comments={props.postData.comments}/>
+
         </PostContainerMainDiv>
-)}
+    )}
+
 
 PostContainer.propTypes ={
     postData: PropTypes.shape({
@@ -79,4 +80,4 @@ PostContainer.propTypes ={
 }
 
 
-export default PostContainer; 
+export default PostContainer;

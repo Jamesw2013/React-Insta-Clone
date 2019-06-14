@@ -5,7 +5,7 @@ import SearchBar from '../SearchBar/SearchBar';
 import styled from 'styled-components';
 
 const PostSection = styled.div`
-    width: 40%;
+    width: 50%;
     display:flex;
     flex-flow: column wrap;
     align-items:center;

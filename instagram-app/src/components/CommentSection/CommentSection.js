@@ -6,9 +6,25 @@ import styled from 'styled-components';
 const CommentBlock = styled.div`
     width: 100%;
     box-sizing: border-box;
-    border: 2px solid black;
     padding: 2%;
+    padding-top: 0;
 `;
+
+const CommentForm = styled.form`
+    width: 100%;
+    display:flex;
+    flex-flow: column wrap;
+    align-items: center;
+    
+`;
+
+const CommentFormInput = styled.input`
+    width: 99%;
+    font-size: 1.8rem;
+    padding: 1%;
+`;
+
+
 class CommentSection extends React.Component{
     constructor(props){
         super(props);
@@ -17,6 +33,7 @@ class CommentSection extends React.Component{
             newComment:""
         }
     }
+
 
     eventHandler = event =>{
         this.setState({newComment:event.target.value})
@@ -39,19 +56,22 @@ class CommentSection extends React.Component{
                     </div>
                     )
                 })}
-                <form onSubmit={this.addNewComment}>
-                <input
+                <CommentForm onSubmit={this.addNewComment}>
+                <CommentFormInput
                     onChange={this.eventHandler}
+                    type="text"
                     placeholder="Add a comment..."
                     value={this.state.newComment}
                 />
-                </form>
+                </CommentForm>
             </CommentBlock>
         );
     }
 }
+
 CommentSection.propTypes = {
     comments: PropTypes.arrayOf(PropTypes.object)
 };
+
 
 export default CommentSection; 

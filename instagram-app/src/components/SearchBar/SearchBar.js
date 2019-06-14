@@ -12,7 +12,7 @@ const StyledHeader = styled.header`
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
-    border: 2px solid black;
+    border: 1px solid lightgrey;
     padding-left: 2%;
     box-sizing: border-box;
 `;
