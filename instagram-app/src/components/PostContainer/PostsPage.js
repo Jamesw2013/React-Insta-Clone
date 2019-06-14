@@ -2,13 +2,30 @@ import React from 'react';
 import dummyData from '../../../src/dummy-data'
 import PostContainer from '../PostContainer/PostContainer';
 import SearchBar from '../SearchBar/SearchBar';
-import '../../App.css';
+import styled from 'styled-components';
+
+const PostSection = styled.div`
+    width: 40%;
+    display:flex;
+    flex-flow: column wrap;
+    align-items:center;
+    box-sizing: border-box;
+`;
+
+const AppContainer = styled.div`
+  width:100%;
+  display:flex;
+  flex-flow:column wrap;
+  align-items:center;
+  box-sizing: border-box;
+`;
 
 class PostsPage extends React.Component{
     constructor(){
       super();
       this.state={
         dummyData:[],
+        searchResults:[],
         searchValue:""
       }
     }
@@ -36,10 +53,15 @@ class PostsPage extends React.Component{
 
     render(){
       return(
-        <div className="main-container">
+        <AppContainer>
           <SearchBar dataset={this.state.dummyData} searchPosts={this.searchPosts} searchEventHandler={this.eventHandler}/>
-          {this.state.dummyData.map(dummyPost => <PostContainer key={dummyPost.timestamp} postData ={dummyPost}/>)}
-        </div>
+
+          <PostSection>
+            {this.state.dummyData.map(dummyPost => <PostContainer key={dummyPost.timestamp} postData ={dummyPost}/>)}
+          </PostSection>
+
+        </AppContainer>
+
       )
     }
   }
